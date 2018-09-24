@@ -271,14 +271,52 @@ export default class Index extends Component<any, any> {
     this.t_ssloop = new TimelineLite();
     let t = this.t_ssloop;
     
+    let grav = { x:0, y:1, scale: 10/10000 };
+    let shiftGrav = new TimelineLite();
+    shiftGrav.eventCallback('onUpdate', () => {
+      this.circlesViewerRef.updateGravity(grav);
+    });
+    function newShift(duration=24, shifts=6) {
+      const minGrav = 3/10000;
+      const maxGrav = 6/10000;
+      shiftGrav.clear();
+      shiftGrav.set(grav, {
+        x: Math.random()-0.5, y: Math.random()-0.5, 
+        scale: minGrav+Math.random()*(maxGrav-minGrav)
+      });
+      for (let i=0; i<shifts; i++) {
+        shiftGrav.to(grav, duration/shifts, {
+          x: Math.random()-0.5,
+          y: Math.random()-0.5,
+          scale: minGrav+Math.random()*(maxGrav-minGrav)
+        });
+      }
+    }
+    newShift();
+    
     t.add(() => {
+      this.circlesViewerRef.closeBottom();
       this.circlesViewerRef.newRandomLayout("", 3);
     });
-    // t.add(() => {
-    //   this.circlesViewerRef.removeCircles(3);
-    // }, 8);
-    t.add(()=>{}, 10);
-    t.eventCallback('onComplete', t.restart);
+    t.add(()=>{
+      this.circlesViewerRef.makeCirclesNonStatic();
+      // this.circlesViewerRef.updateGravity({
+      //   x: Math.random()-0.5, y: Math.random()-0.5,
+      //   scale: 2/10000
+      // });
+    }, 3);
+    t.add(shiftGrav);
+    t.add(() => {
+      this.circlesViewerRef.openBottom();
+      this.circlesViewerRef.updateGravity({
+        x: 0, y: 1, scale: 15/10000
+      });
+    }, 27);
+    t.add(() => {}, 30);
+    t.eventCallback('onComplete', () => {
+      newShift();
+      t.restart();
+    });
   }
 
   public render() {
