@@ -20,6 +20,7 @@ export default class Controller extends Component<any, any> {
 
   private textInputRef: HTMLTextAreaElement;
   private textInputRef2: HTMLTextAreaElement;
+  private sizeInputRef2: HTMLInputElement;
 
   // private resizeWidthRef: HTMLInputElement;
   // private resizeHeightRef: HTMLInputElement;
@@ -100,6 +101,7 @@ export default class Controller extends Component<any, any> {
               let event = events[e.target.value];
               if (event) {
                 this.textInputRef2.value = event.title;
+                if (event.size) this.sizeInputRef2.value = event.size;
               }
             }}>
               <option value="__">–– Please choose an option ––</option>
@@ -141,25 +143,28 @@ export default class Controller extends Component<any, any> {
             contentEditable
             cols={120}
             rows={5}
-            ref={(ref) => {this.textInputRef2 = ref; }}
+            ref={(ref) => { this.textInputRef2 = ref; }}
             defaultValue={"A City\nFull of\nDesign"}
           />
-          {/* <label className="labelInput" style={{lineHeight:"19px", marginTop:10}}>
+          <label className="labelInput" style={{lineHeight:"19px", marginTop:10}}>
             text size
             <input
               type="number"
               defaultValue="150"
               min="10"
               step="10"
+              ref={(ref) => { this.sizeInputRef2=ref; }}
               onChange={null}
             />
-          </label> */}
+          </label>
           <div
             className="button"
             onClick={() => {
               if (this.textInputRef2.value.length > 0) {
-                this.onSendMessage(MessageTypes.newText, this.textInputRef2.value);
-                {/* this.textInputRef.value = ""; */}
+                this.onSendMessage(MessageTypes.newTextWithParams, {
+                  text: this.textInputRef2.value,
+                  size: this.sizeInputRef2.value
+                });
               }
             }}
           >new text</div>
@@ -179,6 +184,7 @@ export default class Controller extends Component<any, any> {
 
 
         <div className="container advanced" style={{height:0}} ref={(ref) => {this.advancedContainerRef=ref}}>
+          <hr/>
           <h3>General</h3>
 
           <div className="buttonContainer">
@@ -725,6 +731,13 @@ export default class Controller extends Component<any, any> {
 
             user-select: none;
             cursor: pointer;
+          }
+          
+          hr {
+            border:0;
+            height:1px;
+            width:100%;
+            background:#333;
           }
         `}</style>
       </div>

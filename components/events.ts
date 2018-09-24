@@ -6,110 +6,137 @@ export default {
   },
   "01": {
     title: "Fundus\nSophienspital",
-    type:  "Panel"
+    type:  "Panel",
+    size:  0,
   },
   "02": {
     title: "Studio\nProtest",
-    type:  "Eröffnung"
+    type:  "Eröffnung",
+    size:  0,
   },
   "03": {
     title: "Neue\nVisuelle\nInstrumente",
-    type:  "Talk"
+    type:  "Talk",
+    size:  0,
   },
   "04": {
-    title: "Polish Design\nand\nEntrepreneurship",
-    type:  "Panel"
+    title: "Polish\nDesign\nand\nEntrepreneurship",
+    type:  "Panel",
+    size:  150,
   },
   "05": {
     title: "Intra\nTemporality",
-    type:  "Talk"
+    type:  "Talk",
+    size:  0,
   },
   "06": {
     title: "Joints\nand\nFittings",
-    type:  "Lecture"
+    type:  "Lecture",
+    size:  0,
   },
   "07": {
     title: "Departure Talk 1:\nUrban\nFood\nStrategies",
-    type:  "Lecture"
+    type:  "Lecture",
+    size:  0,
   },
   "08": {
     title: "Departure Talk 1:\nUrban\nFood\nStrategies",
-    type:  "Panel"
+    type:  "Panel",
+    size:  0,
   },
   "09": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Departure Talk 2:\nDesigning the Experience\nFood and Business",
+    type:  "Panel",
+    size:  0,
   },
   "10": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Prophecy of the Fallen",
+    type:  "Talk",
+    size:  0,
   },
   "11": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Teaser: Doing Nothing with Ai – Eine Neuroaktive Robotik-installation",
+    type:  "Talk",
+    size:  0,
   },
   "12": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Atmove: Design als Treiber von nachhaltigen Innovationen",
+    type:  "Talk",
+    size:  0,
   },
   "13": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Protestarchitektur von Semper bis Occupy",
+    type:  "Lecture",
+    size:  0,
   },
   "14": {
-    title: "Studio",
-    type: "Panel"
+    title: "Designing Realities Conference",
+    type:  "Conference",
+    size:  0,
   },
   "15": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Designing Realities Conference: VR & Architecture",
+    type:  "Panel",
+    size:  0,
   },
   "16": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Designing Realities Conference: Art Unframed – VR als künstlerisches Medium",
+    type:  "Lecture",
+    size:  0,
   },
   "17": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Designing Realities Conference: Levelling the Playing Field",
+    type:  "Keynote",
+    size:  0,
   },
   "18": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Designing Realities Conference: VR Beyond Play",
+    type:  "Panel",
+    size:  0,
   },
   "19": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Designing Realities Conference: XR zwischen Ausstellungsraum und virtueller Realität",
+    type:  "Panel",
+    size:  0,
   },
   "20": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Designing Realities Conference: Databar",
+    type:  "Experience",
+    size:  0,
   },
   "21": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Sowieso Sozial! – Social Design im Dienst der Gesellschaft",
+    type:  "Panel",
+    size:  0,
   },
   "22": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Stadtarbeit-Projekte 2018",
+    type:  "Präsentation",
+    size:  0,
   },
   "23": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Erste Bank Mehrwert-Designpreis 2018",
+    type:  "Preisverleihung",
+    size:  0,
   },
   "24": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Digitale Visionen und feministische Perspektiven: Das Design unserer Zukunft",
+    type:  "Panel",
+    size:  0,
   },
   "25": {
     title: "Studio",
-    type:  "Panel"
+    type:  "The Role of Digitalization in Political Movements",
+    size:  0,
   },
   "26": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Haltung zeigen!",
+    type:  "Panel",
+    size:  0,
   },
   "27": {
-    title: "Studio",
-    type:  "Panel"
+    title: "Danke!",
+    type:  "",
+    size:  0,
   },
 };

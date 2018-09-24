@@ -121,8 +121,14 @@ export default class Index extends Component<any, any> {
         break;
 
       case MessageTypes.newText:
-        this.textViewerRef.newText(messagePackage.data);
+        // this.textViewerRef.newText(messagePackage.data);
         this.textLoop(messagePackage.data)
+        break;
+      
+      case MessageTypes.newTextWithParams:
+        // this.textViewerRef.newText(messagePackage.data);
+        this.textLoop(messagePackage.data.text)
+        this.textViewerRef.updateTextSize(parseInt(messagePackage.data.size, 10));
         break;
 
       case MessageTypes.dropText:

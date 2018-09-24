@@ -8,6 +8,7 @@ export enum MessageTypes {
   makeNonStatic,
 
   newText,
+  newTextWithParams,
   dropText,
 
   closeBounds,
