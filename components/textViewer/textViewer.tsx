@@ -135,10 +135,11 @@ export default class StatueViewer extends Component<any, any> {
       );
     }
 
-    // FIXME: disabled bodies
-    // this.textPhysics.enableFunnel(false);
-    // this.enableColliders(false);
+    // disabled funnel and colliders
     this.textPhysics.openBottomBodies();
+    
+    // immediately update svg positions, so they don't get drawn in the middle of the screen
+    this.textPhysics.update(this.svgs);
   }
 
   public updateGravity = (config: IGravityConfig) => {
@@ -315,12 +316,8 @@ export default class StatueViewer extends Component<any, any> {
   }
 
   private animate = () => {
-    const delta = Math.min(1.0 / 20.0, this.clock.getDelta());
-
-    this.textPhysics.update(
-      this.svgs,
-    );
-
+    // const delta = Math.min(1.0 / 20.0, this.clock.getDelta());
+    this.textPhysics.update(this.svgs);
     this.draw();
 
     this.frameId = requestAnimationFrame(this.animate);
