@@ -20,6 +20,8 @@ import TextViewer from "../components/textViewer/textViewer";
 import Logo from "../components/logo";
 import DividerLines from "../components/dividerLines";
 
+import {TimelineLite} from "gsap";
+
 export default class Index extends Component<any, any> {
 
   private controllerWindow: Window;
@@ -120,6 +122,7 @@ export default class Index extends Component<any, any> {
 
       case MessageTypes.newText:
         this.textViewerRef.newText(messagePackage.data);
+        this.textLoop(messagePackage.data)
         break;
 
       case MessageTypes.dropText:
@@ -216,6 +219,32 @@ export default class Index extends Component<any, any> {
         break;
     }
   }
+  
+  private t_textloop;
+  
+  public textLoop(text:string) {
+    if (this.t_textloop) {
+      this.t_textloop.kill();
+    }
+    this.t_textloop = new TimelineLite();
+    let t = this.t_textloop;
+    
+    console.log(text);
+    
+    t.add(() => {
+      this.textViewerRef.closeBottom();
+      this.textViewerRef.newText(text);
+    });
+    
+    t.add(() => {
+      this.textViewerRef.openBottom();
+    }, 6);
+    
+    t.add(()=>{}, 8);
+    
+    t.eventCallback('onComplete', t.restart);
+  }
+
 
   public render() {
     return (
