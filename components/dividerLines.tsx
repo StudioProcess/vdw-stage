@@ -43,7 +43,7 @@ export default class DividerLines extends Component<any, any> {
             right: 0;
             bottom: 0;
 
-            display: flex;
+            display: none;
             align-items: stretch;
 
             pointer-events: none;
