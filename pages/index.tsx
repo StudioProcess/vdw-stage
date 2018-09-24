@@ -45,6 +45,8 @@ export default class Index extends Component<any, any> {
         this.toggleFullscreen();
       }
     });
+    
+    this.startScreensaverLoop();
   }
 
   public componentWillUnmount() {
