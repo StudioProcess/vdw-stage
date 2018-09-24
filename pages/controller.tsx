@@ -10,6 +10,8 @@ import {
   IGravityConfig,
 } from "../components/types";
 
+import events from "../components/events";
+
 export default class Controller extends Component<any, any> {
 
   private mainWindow: Window;
@@ -17,6 +19,7 @@ export default class Controller extends Component<any, any> {
   private debugContainerRef: HTMLDivElement;
 
   private textInputRef: HTMLTextAreaElement;
+  private textInputRef2: HTMLTextAreaElement;
 
   // private resizeWidthRef: HTMLInputElement;
   // private resizeHeightRef: HTMLInputElement;
@@ -86,7 +89,81 @@ export default class Controller extends Component<any, any> {
           <title>Controller</title>
         </Head>
         
+        
         <div className="container stage">
+          
+          <div className="labelContainer">
+            <label>Preset<br/>
+
+            <select id="preset-select" onChange={(e) => {
+              {/* console.log(e.target.value); */}
+              let event = events[e.target.value];
+              if (event) {
+                this.textInputRef2.value = event.title;
+              }
+            }}>
+              <option value="__">–– Please choose an option ––</option>
+              <option value="00">A City Full of Design</option>
+              <option value="01">FUNDUS SOPHIENSPITAL (Panel)</option>
+              <option value="02">STUDIO PROTEST (Eröffnung)</option>
+              <option value="03">NEUE VISUELLE INSTRUMENTE (Talk)</option>
+              <option value="04">POLISH DESIGN AND ENTREPRENEURSHIP (Panel)</option>
+              <option value="05">INTRA-TEMPORALITY (Panel)</option>
+              <option value="06">JOINTS AND FITTINGS (Lecture)</option>
+              <option value="07">DEPARTURE TALK 1: URBAN FOOD STRATEGIES (Lecture)</option>
+              <option value="08">DEPARTURE TALK 1: URBAN FOOD STRATEGIES (Panel)</option>
+              <option value="09">DEPARTURE TALK 2: DESIGNING THE EXPERIENCE (Panel)</option>
+              <option value="10">PROPHECY OF THE FALLEN (Talk)</option>
+              <option value="11">TEASER: DOING NOTHING WITH AI (Talk)</option>
+              <option value="12">ATMOVE: ATMOVE: DESIGN ALS TREIBER... (Talk)</option>
+              <option value="13">PROTESTARCHITEKTUR VON SEMPER BIS OCCUPY (Lecture)</option>
+              <option value="14">DESIGNING REALITIES CONFERENCE (Conference)</option>
+              <option value="15">– VR &amp; ARCHITECTURE (Panel)</option>
+              <option value="16">– ART UNFRAMED (Lecture)</option>
+              <option value="17">– LEVELLING THE PLAYING FIELD (Keynote)</option>
+              <option value="18">– VR BEYOND PLAY (Panel)</option>
+              <option value="19">– XR ZWISCHEN AUSSTELLUNGSRAUM... (Panel)</option>
+              <option value="20">– DATABAR (Experience)</option>
+              <option value="21">SOWIESO SOZIAL! (Panel)</option>
+              <option value="22">STADTARBEIT-PROJEKTE 2018 (Präsentation)</option>
+              <option value="23">ERSTE BANK MEHRWERT-DESIGNPREIS 2018 (Preisverleihung)</option>
+              <option value="24">DIGITALE VISIONEN UND FEMINISTISCHE PERSPEKTIVEN (Panel)</option>
+              <option value="25">THE ROLE OF DIGITALIZATION IN POLITICAL MOVEMENTS (Panel)</option>
+              <option value="26">HALTUNG ZEIGEN! (Panel)</option>
+              <option value="27">DANKE! (Teamessen)</option>
+              {/* <option value="">---------------------------</option> */}
+            </select>
+            </label>
+          </div>
+          
+          
+          <textarea
+            contentEditable
+            cols={120}
+            rows={5}
+            ref={(ref) => {this.textInputRef2 = ref; }}
+            defaultValue={"A City\nFull of\nDesign"}
+          />
+          {/* <label className="labelInput" style={{lineHeight:"19px", marginTop:10}}>
+            text size
+            <input
+              type="number"
+              defaultValue="150"
+              min="10"
+              step="10"
+              onChange={null}
+            />
+          </label> */}
+          <div
+            className="button"
+            onClick={() => {
+              if (this.textInputRef2.value.length > 0) {
+                this.onSendMessage(MessageTypes.newText, this.textInputRef2.value);
+                {/* this.textInputRef.value = ""; */}
+              }
+            }}
+          >new text</div>
+          
           <div className="buttonContainer" style={{fontWeight:"bold"}}>
             ADVANCED
             <input
@@ -99,6 +176,8 @@ export default class Controller extends Component<any, any> {
           </div>
         </div>
         
+
+
         <div className="container advanced" style={{height:0}} ref={(ref) => {this.advancedContainerRef=ref}}>
           <h3>General</h3>
 
