@@ -146,6 +146,16 @@ export default class StatueViewer extends Component<any, any> {
     // immediately update svg positions, so they don't get drawn in the middle of the screen
     this.textPhysics.update(this.svgs);
   }
+  
+  
+  public clearText() {
+    for (let i = 0, l = this.svgs.length; i < l; i++) {
+      this.containerRef.removeChild(this.svgs[i]);
+    }
+    this.svgs = [];
+    this.textPhysics.clearBodies();
+  }
+  
 
   public updateGravity = (config: IGravityConfig) => {
     this.textPhysics.updateGravity(config);

@@ -94,7 +94,7 @@ export default class Controller extends Component<any, any> {
           <h3>Screensaver</h3>
           
           <div className="button"
-            onClick={() => {}}
+            onClick={() => {this.onSendMessage(MessageTypes.startScreensaver);}}
           >start screensaver</div>
           
           

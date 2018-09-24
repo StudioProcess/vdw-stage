@@ -121,14 +121,18 @@ export default class Index extends Component<any, any> {
         break;
 
       case MessageTypes.newText:
-        // this.textViewerRef.newText(messagePackage.data);
-        this.textLoop(messagePackage.data)
+        this.textViewerRef.newText(messagePackage.data);
+        // this.startTextLoop(messagePackage.data)
         break;
       
       case MessageTypes.newTextWithParams:
         // this.textViewerRef.newText(messagePackage.data);
-        this.textLoop(messagePackage.data.text)
+        this.startTextLoop(messagePackage.data.text)
         this.textViewerRef.updateTextSize(parseInt(messagePackage.data.size, 10));
+        break;
+        
+      case MessageTypes.startScreensaver:
+        this.startScreensaverLoop();
         break;
 
       case MessageTypes.dropText:
@@ -226,16 +230,18 @@ export default class Index extends Component<any, any> {
     }
   }
   
-  private t_textloop;
+  private t_textloop: TimelineLite;
   
-  public textLoop(text:string) {
-    if (this.t_textloop) {
-      this.t_textloop.kill();
-    }
+  public stopTextLoop() {
+    if (this.t_textloop) { this.t_textloop.kill(); }
+  }
+  
+  public startTextLoop(text:string) {
+    console.log('text loop:', text);
+    this.stopTextLoop();
+    this.stopScreensaverLoop();
     this.t_textloop = new TimelineLite();
     let t = this.t_textloop;
-    
-    console.log(text);
     
     t.add(() => {
       this.textViewerRef.closeBottom();
@@ -246,11 +252,34 @@ export default class Index extends Component<any, any> {
       this.textViewerRef.openBottom();
     }, 6);
     
-    t.add(()=>{}, 8);
+    t.add(() => {}, 8);
     
     t.eventCallback('onComplete', t.restart);
   }
 
+  private t_ssloop: TimelineLite;
+  
+  public stopScreensaverLoop() {
+    if (this.t_ssloop) { this.t_ssloop.kill(); }
+  }
+  
+  public startScreensaverLoop() {
+    console.log('starting screensaver');
+    this.stopScreensaverLoop();
+    this.stopTextLoop();
+    this.textViewerRef.clearText();
+    this.t_ssloop = new TimelineLite();
+    let t = this.t_ssloop;
+    
+    t.add(() => {
+      this.circlesViewerRef.newRandomLayout("", 3);
+    });
+    // t.add(() => {
+    //   this.circlesViewerRef.removeCircles(3);
+    // }, 8);
+    t.add(()=>{}, 10);
+    t.eventCallback('onComplete', t.restart);
+  }
 
   public render() {
     return (

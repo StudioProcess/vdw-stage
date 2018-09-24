@@ -10,6 +10,8 @@ export enum MessageTypes {
   newText,
   newTextWithParams,
   dropText,
+  
+  startScreensaver,
 
   closeBounds,
 
