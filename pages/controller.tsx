@@ -407,8 +407,8 @@ export default class Controller extends Component<any, any> {
                 grain scale
                 <input
                 type="range"
-                min="0.01"
-                max="3.0"
+                min="0.20"
+                max="1.25"
                 defaultValue="1.0"
                 step="0.01"
                 onChange={(e) => {
