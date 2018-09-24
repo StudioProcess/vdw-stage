@@ -5,7 +5,7 @@ export default {
     size:  200,
   },
   "01": {
-    title: "Fundus\nSophienspital",
+    title: "Fundus\nSophien-\nspital",
     type:  "Panel",
     size:  250,
   },

@@ -240,8 +240,10 @@ export default class Index extends Component<any, any> {
     console.log('text loop:', text);
     this.stopTextLoop();
     this.stopScreensaverLoop();
+    this.circlesViewerRef.newRandomLayout("", 1);
     this.t_textloop = new TimelineLite();
     let t = this.t_textloop;
+    let loopCounter = 0;
     
     t.add(() => {
       this.textViewerRef.closeBottom();
@@ -254,7 +256,13 @@ export default class Index extends Component<any, any> {
     
     t.add(() => {}, 8);
     
-    t.eventCallback('onComplete', t.restart);
+    t.eventCallback('onComplete', () => {
+      if (++loopCounter >= 2) {
+        loopCounter = 0;
+        this.circlesViewerRef.newRandomLayout("", 1);
+      }
+      t.restart();
+    });
   }
 
   private t_ssloop: TimelineLite;
