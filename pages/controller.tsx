@@ -24,6 +24,7 @@ export default class Controller extends Component<any, any> {
   private seedInputRef: HTMLInputElement;
   private growTimeRef: HTMLInputElement;
   private shrinkTimeRef: HTMLInputElement;
+  private advancedContainerRef: HTMLDivElement;
 
   // private bgColorInputRef: HTMLInputElement;
   // private fgColorInputRef: HTMLInputElement;
@@ -84,10 +85,21 @@ export default class Controller extends Component<any, any> {
         <Head>
           <title>Controller</title>
         </Head>
-
-        <div className="container">
-          
-          
+        
+        <div className="container stage">
+          <div className="buttonContainer" style={{fontWeight:"bold"}}>
+            ADVANCED
+            <input
+              type="checkbox"
+              onChange={(e) => {
+                if (e.target.checked) this.advancedContainerRef.style.height = "auto";
+                else this.advancedContainerRef.style.height = "0";
+              }}
+            />
+          </div>
+        </div>
+        
+        <div className="container advanced" style={{height:0}} ref={(ref) => {this.advancedContainerRef=ref}}>
           <h3>General</h3>
 
           <div className="buttonContainer">
@@ -526,10 +538,10 @@ export default class Controller extends Component<any, any> {
             </div>
           </div>
 
-          <div
+          {/* <div
             className="button"
             onClick={() => {this.onSendMessage(MessageTypes.dropText); }}
-          >drop text</div>
+          >drop text</div> */}
 
           {/* <div
             className="button"
@@ -557,6 +569,7 @@ export default class Controller extends Component<any, any> {
             color: #333;
             
             h3:first-child { margin-top:0; }
+            overflow:hidden;
           }
 
           .buttonContainer, .labelContainer {
