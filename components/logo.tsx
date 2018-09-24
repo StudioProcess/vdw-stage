@@ -25,9 +25,8 @@ export default class Logo extends Component<any, any> {
           div {
             position: absolute;
             left: 3%;
-            bottom: 3%;
-
-            width: 20%;
+            top: 3%;
+            width: 10%;
           }
 
           img {
