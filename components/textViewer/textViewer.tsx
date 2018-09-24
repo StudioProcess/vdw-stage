@@ -1,3 +1,7 @@
+const SPAWN_ON_STARTUP = false;
+const TEXT = "A City\nFull of\nDesign";
+const SIZE = 200;
+
 import {
   Component,
 } from "react";
@@ -54,10 +58,11 @@ export default class StatueViewer extends Component<any, any> {
           console.error("could not load font", err);
         } else {
           this.font = font;
-
           this.svgs = [];
-
-          this.newText("A City\nFull of\nDesign");
+          if (SPAWN_ON_STARTUP) {
+            this.updateTextSize(SIZE);
+            this.newText(TEXT);
+          }
         }
       },
     );

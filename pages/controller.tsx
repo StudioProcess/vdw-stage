@@ -90,12 +90,18 @@ export default class Controller extends Component<any, any> {
           <title>Controller</title>
         </Head>
         
-        
         <div className="container stage">
+          <h3>Screensaver</h3>
           
-          <div className="labelContainer">
+          <div className="button"
+            onClick={() => {}}
+          >start screensaver</div>
+          
+          
+          <h3>Event Announcements</h3>
+          
+          <div className="labelContainer" style={{marginTop:0}}>
             <label>Preset<br/>
-
             <select id="preset-select" onChange={(e) => {
               {/* console.log(e.target.value); */}
               let event = events[e.target.value];
@@ -167,7 +173,7 @@ export default class Controller extends Component<any, any> {
                 });
               }
             }}
-          >new text</div>
+          >set text</div>
           
           <div className="buttonContainer" style={{fontWeight:"bold"}}>
             ADVANCED
