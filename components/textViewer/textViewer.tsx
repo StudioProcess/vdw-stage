@@ -52,7 +52,7 @@ export default class StatueViewer extends Component<any, any> {
     this.svgs = [];
 
     OpenType.load(
-      "/static/fonts/Linotype - NHaasGroteskTXPro-55Rg.otf",
+      "./static/fonts/Linotype - NHaasGroteskTXPro-55Rg.otf",
       (err, font) => {
         if (err) {
           console.error("could not load font", err);
