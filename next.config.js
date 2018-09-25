@@ -4,6 +4,7 @@ const path = require("path");
 
 module.exports = withProgressBar(
   withTypescript({
+    assetPrefix: process.env.NODE_ENV === 'production' ? './' : '',
     webpack: (config) => {
       // Fixes npm packages that depend on `fs` module
       config.node = {
