@@ -82,24 +82,24 @@ export default class Controller extends Component<any, any> {
     //   console.log("data", messagePackage.data);
     // }
   }
-  
+
   public render() {
     return (
       <div>
         <Head>
           <title>Controller</title>
         </Head>
-        
+
         <div className="container stage">
           <h3>Screensaver</h3>
-          
+
           <div className="button"
             onClick={() => {this.onSendMessage(MessageTypes.startScreensaver);}}
           >start screensaver</div>
-          
-          
+
+
           <h3>Event Announcements</h3>
-          
+
           <div className="labelContainer" style={{marginTop:0}}>
             <label>Preset<br/>
             <select id="preset-select" onChange={(e) => {
@@ -143,8 +143,8 @@ export default class Controller extends Component<any, any> {
             </select>
             </label>
           </div>
-          
-          
+
+
           <textarea
             contentEditable
             cols={120}
@@ -174,7 +174,7 @@ export default class Controller extends Component<any, any> {
               }
             }}
           >set text</div>
-          
+
           <div className="buttonContainer" style={{fontWeight:"bold"}}>
             ADVANCED
             <input
@@ -186,7 +186,7 @@ export default class Controller extends Component<any, any> {
             />
           </div>
         </div>
-        
+
 
 
         <div className="container advanced" style={{height:0}} ref={(ref) => {this.advancedContainerRef=ref}}>
@@ -203,7 +203,7 @@ export default class Controller extends Component<any, any> {
               }}
             />
           </div>
-          
+
           <div className="buttonContainer">
             circles color
             <input
@@ -256,6 +256,7 @@ export default class Controller extends Component<any, any> {
                 }}
               />
             </div>
+
             <div className="labelInput">
                 lines
                 <input
@@ -266,9 +267,23 @@ export default class Controller extends Component<any, any> {
                   }}
                 />
               </div>
+
+              {/*
+              <div className="labelInput">
+                  nextUp
+                  <input
+                  type="checkbox"
+                  defaultChecked
+                  onChange={(e) => {
+                    this.onSendMessage(MessageTypes.toggleNextUpVisibility, e.target.checked);
+                  }}
+                />
+              </div>
+              */}
+
             </div>
-          
-          
+
+
           <h3>Generator</h3>
 
            <div className="labelContainer">
@@ -331,7 +346,7 @@ export default class Controller extends Component<any, any> {
               }}
               />
             </div>
-            
+
             <div className="labelInput">
               showPartial
               <input type="checkbox"
@@ -342,7 +357,7 @@ export default class Controller extends Component<any, any> {
               />
             </div>
           </div>
-          
+
           <div className="labelContainer">
             <div className="labelInput">
               growTime
@@ -365,12 +380,12 @@ export default class Controller extends Component<any, any> {
               />
             </div>
           </div>
-          
+
           <div className="buttonContainer">
             <div
               className="button"
-              onClick={() => {this.onSendMessage(MessageTypes.newLayout, 
-                {seed: this.seedInputRef.value, growTime: this.growTimeRef.value}); 
+              onClick={() => {this.onSendMessage(MessageTypes.newLayout,
+                {seed: this.seedInputRef.value, growTime: this.growTimeRef.value});
               }}
             >new circles</div>
             <input
@@ -385,10 +400,10 @@ export default class Controller extends Component<any, any> {
               onClick={() => {this.onSendMessage(MessageTypes.removeCircles, this.shrinkTimeRef.value); }}
             >shrink circles</div>
           </div>
-          
-          
+
+
           <h3>Circles</h3>
-          
+
           <div className="labelContainer">
             <div className="labelInput">
                 grain density
@@ -430,7 +445,7 @@ export default class Controller extends Component<any, any> {
               />
             </div>
           </div>
-          
+
 
           <h3>Circle Physics</h3>
 
@@ -517,11 +532,11 @@ export default class Controller extends Component<any, any> {
             className="button"
             onClick={() => {this.onSendMessage(MessageTypes.closeBounds); }}
           >close worlds bounds</div> */}
-          
-          
+
+
           <h3>Text</h3>
-          
-          
+
+
           <textarea
             contentEditable
             cols={120}
@@ -551,8 +566,8 @@ export default class Controller extends Component<any, any> {
                 }}
               />
             </div>
-          
-          
+
+
           <h3>Text Physics</h3>
 
           <div className="labelContainer">
@@ -593,7 +608,7 @@ export default class Controller extends Component<any, any> {
               />
             </div>
           </div>
-          
+
           <div className="labelContainer">
             <div className="labelInput">
                 gravity direction
@@ -658,7 +673,7 @@ export default class Controller extends Component<any, any> {
             flex-direction: column;
 
             color: #333;
-            
+
             h3:first-child { margin-top:0; }
             overflow:hidden;
           }
@@ -738,7 +753,7 @@ export default class Controller extends Component<any, any> {
             user-select: none;
             cursor: pointer;
           }
-          
+
           hr {
             border:0;
             height:1px;

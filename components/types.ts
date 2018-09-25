@@ -10,7 +10,7 @@ export enum MessageTypes {
   newText,
   newTextWithParams,
   dropText,
-  
+
   startScreensaver,
 
   closeBounds,
@@ -45,6 +45,7 @@ export enum MessageTypes {
 
   toggleLogoVisibility,
   toggleLinesVisibility,
+  toggleNextUpVisibility,
 }
 
 export interface IMessagePackage {

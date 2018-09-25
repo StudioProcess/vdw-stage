@@ -19,6 +19,7 @@ import TextViewer from "../components/textViewer/textViewer";
 
 import Logo from "../components/logo";
 import DividerLines from "../components/dividerLines";
+import NextUp from "../components/nextUp";
 
 import {TimelineLite} from "gsap";
 
@@ -30,6 +31,7 @@ export default class Index extends Component<any, any> {
 
   private logoRef: Logo;
   private linesRef: DividerLines;
+  private nextRef: NextUp;
 
   private fullscreenButtonRef: HTMLDivElement;
 
@@ -45,7 +47,7 @@ export default class Index extends Component<any, any> {
         this.toggleFullscreen();
       }
     });
-    
+
     this.startScreensaverLoop();
   }
 
@@ -61,7 +63,7 @@ export default class Index extends Component<any, any> {
       "titlebar=0,close=0,menubar=0,location=0,status=0,width=300,height=825,left=0,top=0,dependent=1,resizable=1,scrollbars=1",
     );
   }
-  
+
   private toggleFullscreen() {
     if (document.webkitFullscreenEnabled) { // Chrome, Opera, Safari
       if (!document.webkitFullscreenElement) {
@@ -73,9 +75,9 @@ export default class Index extends Component<any, any> {
       if (!document.mozFullScreenElement) {
       // @ts-ignore
         document.querySelector("body").mozRequestFullScreen();
-      } else { 
+      } else {
         // @ts-ignore
-        document.mozCancelFullScreen(); 
+        document.mozCancelFullScreen();
       }
     } else if (document.fullscreenEnabled) { // Standard, Edge
       if (!document.fullscreenElement) {
@@ -101,7 +103,7 @@ export default class Index extends Component<any, any> {
       case MessageTypes.newLayout:
         this.circlesViewerRef.newRandomLayout(messagePackage.data.seed, messagePackage.data.growTime);
         break;
-        
+
       case MessageTypes.removeCircles:
         this.circlesViewerRef.removeCircles(messagePackage.data);
         break;
@@ -126,13 +128,13 @@ export default class Index extends Component<any, any> {
         this.textViewerRef.newText(messagePackage.data);
         // this.startTextLoop(messagePackage.data)
         break;
-      
+
       case MessageTypes.newTextWithParams:
         // this.textViewerRef.newText(messagePackage.data);
         this.startTextLoop(messagePackage.data.text)
         this.textViewerRef.updateTextSize(parseInt(messagePackage.data.size, 10));
         break;
-        
+
       case MessageTypes.startScreensaver:
         this.startScreensaverLoop();
         break;
@@ -229,15 +231,23 @@ export default class Index extends Component<any, any> {
           this.linesRef.hide();
         }
         break;
+
+      case MessageTypes.toggleNextUpVisibility:
+        if (messagePackage.data === true) {
+          this.nextRef.show();
+        } else {
+          this.nextRef.hide();
+        }
+      break;
     }
   }
-  
+
   private t_textloop: TimelineLite;
-  
+
   public stopTextLoop() {
     if (this.t_textloop) { this.t_textloop.kill(); }
   }
-  
+
   public startTextLoop(text:string) {
     console.log('text loop:', text);
     this.stopTextLoop();
@@ -246,18 +256,18 @@ export default class Index extends Component<any, any> {
     this.t_textloop = new TimelineLite();
     let t = this.t_textloop;
     let loopCounter = 0;
-    
+
     t.add(() => {
       this.textViewerRef.closeBottom();
       this.textViewerRef.newText(text);
     });
-    
+
     t.add(() => {
       this.textViewerRef.openBottom();
     }, 6);
-    
+
     t.add(() => {}, 8);
-    
+
     t.eventCallback('onComplete', () => {
       if (++loopCounter >= 2) {
         loopCounter = 0;
@@ -268,11 +278,11 @@ export default class Index extends Component<any, any> {
   }
 
   private t_ssloop: TimelineLite;
-  
+
   public stopScreensaverLoop() {
     if (this.t_ssloop) { this.t_ssloop.kill(); }
   }
-  
+
   public startScreensaverLoop() {
     console.log('starting screensaver');
     this.stopScreensaverLoop();
@@ -280,7 +290,7 @@ export default class Index extends Component<any, any> {
     this.textViewerRef.clearText();
     this.t_ssloop = new TimelineLite();
     let t = this.t_ssloop;
-    
+
     let grav = { x:0, y:1, scale: 10/10000 };
     let shiftGrav = new TimelineLite();
     shiftGrav.eventCallback('onUpdate', () => {
@@ -291,7 +301,7 @@ export default class Index extends Component<any, any> {
       const maxGrav = 6/10000;
       shiftGrav.clear();
       shiftGrav.set(grav, {
-        x: Math.random()-0.5, y: Math.random()-0.5, 
+        x: Math.random()-0.5, y: Math.random()-0.5,
         scale: minGrav+Math.random()*(maxGrav-minGrav)
       });
       for (let i=0; i<shifts; i++) {
@@ -303,7 +313,7 @@ export default class Index extends Component<any, any> {
       }
     }
     newShift();
-    
+
     t.add(() => {
       this.circlesViewerRef.closeBottom();
       this.circlesViewerRef.newRandomLayout("", 3);
@@ -346,7 +356,7 @@ export default class Index extends Component<any, any> {
             position: "relative",
           }}
         >
-          
+
           <div className="webGLContainer">
             <CirclesViewer
               ref={(ref) => {this.circlesViewerRef = ref; }}
@@ -365,6 +375,12 @@ export default class Index extends Component<any, any> {
           <Logo
             ref={(ref) => {this.logoRef = ref; }}
           />
+
+          {/*
+          <NextUp
+            ref={(ref) => {this.nextRef = ref; }}
+          />
+           */}
 
           <div
             className="fullscreenButton"
