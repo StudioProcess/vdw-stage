@@ -19,7 +19,7 @@ export default class Logo extends Component<any, any> {
       <div
         ref={(ref) => {this.containerRef = ref; }}
       >
-        <img src="/static/vdw_logo.svg" />
+        <img src="./static/vdw_logo.svg" />
 
         <style jsx>{`
           div {

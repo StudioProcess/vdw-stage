@@ -64,7 +64,7 @@ export default class Index extends Component<any, any> {
 
   private openControllerWindow = () => {
     this.controllerWindow = window.open(
-      "/controller",
+      "./controller",
       "controller",
       "titlebar=0,close=0,menubar=0,location=0,status=0,width=300,height=825,left=0,top=0,dependent=1,resizable=1,scrollbars=1",
     );
