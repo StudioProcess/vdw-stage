@@ -148,7 +148,7 @@ export default class StatueViewer extends Component<any, any> {
       aspectRatio,
     );
 
-    window.addEventListener("resize", this.onResize);
+    // window.addEventListener("resize", this.onResize);
     this.onResize();
 
     this.circlePhysics.setFromLayout(
@@ -162,7 +162,7 @@ export default class StatueViewer extends Component<any, any> {
   public componentWillUnmount() {
     cancelAnimationFrame(this.frameId);
 
-    window.removeEventListener("resize", this.onResize);
+    // window.removeEventListener("resize", this.onResize);
   }
 
   public changeBgColor = (color) => {

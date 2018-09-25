@@ -34,6 +34,7 @@ export default class Index extends Component<any, any> {
   private nextRef: NextUp;
 
   private fullscreenButtonRef: HTMLDivElement;
+  private containerRef: HTMLDivElement;
 
   public componentDidMount() {
     this.openControllerWindow();
@@ -47,6 +48,11 @@ export default class Index extends Component<any, any> {
         this.toggleFullscreen();
       }
     });
+    
+    window.addEventListener("resize", () => {
+      this.fitViewport();
+    });
+    this.fitViewport();
 
     this.startScreensaverLoop();
   }
@@ -338,6 +344,18 @@ export default class Index extends Component<any, any> {
       t.restart();
     });
   }
+  
+  private fitViewport() {
+    if (window.innerWidth/window.innerHeight < W/H) {
+      // fit width
+      this.containerRef.style.width = window.innerWidth + "px";
+      this.containerRef.style.height = (window.innerWidth / (W/H)) + "px";
+    } else {
+      // fit height
+      this.containerRef.style.width = window.innerHeight * (W/H)+ "px";
+      this.containerRef.style.height = window.innerHeight + "px";
+    }
+  }
 
   public render() {
     return (
@@ -347,7 +365,9 @@ export default class Index extends Component<any, any> {
           <meta name="viewport" content="width=device-width,initial-scale=1" />
         </Head>
 
+        <div className="cover">
         <div className="container"
+          ref={(ref) => {this.containerRef = ref;}}
           style={{
             // width: "100vw",
             // height: "100vh",
@@ -388,8 +408,21 @@ export default class Index extends Component<any, any> {
             ref={(ref) => {this.fullscreenButtonRef = ref; }}
           >click to fullscreen</div>
         </div>
+        </div>
 
         <style jsx>{`
+          .cover {
+            width:100vw;
+            height:100vh;
+            position:absolute;
+            top:50%;
+            left:50%;
+          }
+          
+          .container {
+            transform: translate(-50%,-50%);
+          }
+          
           .webGLContainer {
             width: 100%;
             height: 100%;
