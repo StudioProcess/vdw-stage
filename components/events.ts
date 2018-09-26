@@ -5,136 +5,176 @@ export default {
     size:  200,
   },
   "01": {
+    title: "Gerald Votava\nModeration",
+    type:  "",
+    size:  200,
+  },
+  "02": {
+    title: "Lilli Hollein\nVIENNA\nDESIGN\nWEEK",
+    type:  "",
+    size:  200,
+  },
+  "03": {
+    title: "Markus Reiter\nBezirksvorsteher\n7. Bezirk",
+    type:  "",
+    size:  200,
+  },
+  "04": {
+    title: "Josef Bitzinger\nWirtschaftskammer\nWien",
+    type:  "",
+    size:  200,
+  },
+  "05": {
+    title: "Norbert Kettner\nWienTourismus",
+    type:  "",
+    size:  200,
+  },
+  "06": {
+    title: "Gerhard Hirczi\nWirtschaftsagentur\nWien",
+    type:  "",
+    size:  200,
+  },
+  "07": {
+    title: "Michał Laszczkowski\nAdam Mickiewicz Institute",
+    type:  "",
+    size:  200,
+  },
+  "08": {
+    title: "Jolanta Róża Kozłowska\nBotschafterin\nRepublik Polen",
+    type:  "",
+    size:  200,
+  },
+  "09": {
     title: "Fundus\nSophien-\nspital",
     type:  "Panel",
     size:  250,
   },
-  "02": {
+  "10": {
     title: "Studio\nProtest",
     type:  "Eröffnung",
     size:  350,
   },
-  "03": {
+  "11": {
     title: "Neue\nVisuelle\nInstrumente",
     type:  "Talk",
     size:  250,
   },
-  "04": {
+  "12": {
     title: "Polish\nDesign\nand\nEntrepreneurship",
     type:  "Panel",
     size:  160,
   },
-  "05": {
+  "13": {
     title: "Intra-\nTemporality",
     type:  "Talk",
     size:  200,
   },
-  "06": {
+  "14": {
     title: "Joints\nand\nFittings",
     type:  "Lecture",
     size:  280,
   },
-  "07": {
+  "15": {
     title: "Departure Talk 1:\nUrban\nFood\nStrategies",
     type:  "Lecture",
     size:  170,
   },
-  "08": {
+  "16": {
     title: "Departure Talk 1:\nUrban\nFood\nStrategies",
     type:  "Panel",
     size:  170,
   },
-  "09": {
+  "17": {
     title: "Departure Talk 2:\nDesigning\nthe\nExperience",
     type:  "Panel",
     size:  160,
   },
-  "10": {
+  "18": {
     title: "Prophecy\nof the\nFallen",
     type:  "Talk",
     size:  230,
   },
-  "11": {
+  "19": {
     title: "Teaser:\nDoing Nothing\nWith Ai",
     type:  "Talk",
     size:  210,
   },
-  "12": {
+  "20": {
     title: "Atmove: Design\nals Treiber\nvon nachhaltigen\nInnovationen",
     type:  "Talk",
     size:  150,
   },
-  "13": {
+  "21": {
     title: "Protestarchitektur\nvon Semper\nbis Occupy",
     type:  "Lecture",
     size:  150,
   },
-  "14": {
+  "22": {
     title: "Designing\nRealities\nConference",
     type:  "Conference",
     size:  180,
   },
-  "15": {
+  "23": {
     title: "DESIGNING REALITES:\nVirtual Reality\n&\nArchitecture",
     type:  "Panel",
     size:  120,
   },
-  "16": {
+  "24": {
     title: "DESIGNING REALITES:\nArt\nUnframed",
     type:  "Lecture",
     size:  120,
   },
-  "17": {
+  "25": {
     title: "DESIGNING REALITES:\nLevelling\nthe\nPlaying Field",
     type:  "Keynote",
     size:  120,
   },
-  "18": {
+  "26": {
     title: "DESIGNING REALITES:\nVR\nBeyond Play",
     type:  "Panel",
     size:  120,
   },
-  "19": {
+  "27": {
     title: "DESIGNING REALITES:\nXR zwischen\nAusstellungsraum\nund virtueller Realität",
     type:  "Panel",
     size:  120,
   },
-  "20": {
+  "28": {
     title: "DESIGNING REALITES:\nDatabar",
     type:  "Experience",
     size:  120,
   },
-  "21": {
+  "29": {
     title: "Sowieso Sozial!\nSocial Design\nim Dienst\nder Gesellschaft",
     type:  "Panel",
     size:  120,
   },
-  "22": {
+  "30": {
     title: "Stadtarbeit-\nProjekte\n2018",
     type:  "Präsentation",
     size:  180,
   },
-  "23": {
+  "31": {
     title: "Erste Bank\nMehrwert-Designpreis\n2018",
     type:  "Preisverleihung",
     size:  130,
   },
-  "24": {
+  "32": {
     title: "Digitale Visionen\nund\nfeministische Perspektiven",
     type:  "Panel",
     size:  110,
   },
-  "25": {
+  "33": {
     title: "The Role\nof Digitalization\nin Political Movements",
     type:  "Panel",
     size:  125,
   },
-  "26": {
+  "34": {
     title: "Haltung\nzeigen!",
     type:  "Panel",
     size:  240,
   },
-  "27": {
+  "35": {
     title: "Danke!\n \n \n ",
     type:  "",
     size:  280,
