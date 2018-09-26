@@ -164,7 +164,7 @@ export default class Controller extends Component<any, any> {
             text size
             <input
               type="number"
-              defaultValue="150"
+              defaultValue="200"
               min="10"
               step="10"
               ref={(ref) => { this.sizeInputRef2=ref; }}

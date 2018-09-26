@@ -60,6 +60,7 @@ export default class Index extends Component<any, any> {
     });
     this.fitViewport();
 
+    // this.startScreensaverLoop();
     this.startScreensaverLoop();
   }
 
