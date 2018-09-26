@@ -3,7 +3,7 @@ const withProgressBar = require("next-progressbar");
 const path = require("path");
 
 const assetPrefix = process.env.ASSET_PREFIX;
-console.log("assetPrefix:", assetPrefix);
+// console.log("process.env.ASSET_PREFIX=" + assetPrefix);
 
 module.exports = withProgressBar(
   withTypescript({

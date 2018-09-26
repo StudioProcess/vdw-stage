@@ -31,10 +31,12 @@ export default class Index extends Component<any, any> {
 
   private logoRef: Logo;
   private linesRef: DividerLines;
-  private nextRef: NextUp;
+  private nextupRef: NextUp;
 
   private fullscreenButtonRef: HTMLDivElement;
   private containerRef: HTMLDivElement;
+  
+  private showNextup = true;
 
   public componentDidMount() {
     this.openControllerWindow();
@@ -239,10 +241,14 @@ export default class Index extends Component<any, any> {
         break;
 
       case MessageTypes.toggleNextUpVisibility:
-        if (messagePackage.data === true) {
-          this.nextRef.show();
-        } else {
-          this.nextRef.hide();
+        this.showNextup = messagePackage.data === true;
+        console.log(this.t_textloop, this.t_ssloop);
+        if (this.t_textloop && this.t_textloop._active) {
+          if (this.showNextup) {
+            this.nextupRef.show();
+          } else {
+            this.nextupRef.hide();
+          }
         }
       break;
     }
@@ -258,6 +264,7 @@ export default class Index extends Component<any, any> {
     console.log('text loop:', text);
     this.stopTextLoop();
     this.stopScreensaverLoop();
+    if (this.showNextup) this.nextupRef.show();
     this.circlesViewerRef.newRandomLayout("", 1);
     this.t_textloop = new TimelineLite();
     let t = this.t_textloop;
@@ -294,6 +301,7 @@ export default class Index extends Component<any, any> {
     this.stopScreensaverLoop();
     this.stopTextLoop();
     this.textViewerRef.clearText();
+    this.nextupRef.hide();
     this.t_ssloop = new TimelineLite();
     let t = this.t_ssloop;
 
@@ -396,11 +404,11 @@ export default class Index extends Component<any, any> {
             ref={(ref) => {this.logoRef = ref; }}
           />
 
-          {/*
+          
           <NextUp
-            ref={(ref) => {this.nextRef = ref; }}
+            ref={(ref) => {this.nextupRef = ref; }}
           />
-           */}
+          
 
           <div
             className="fullscreenButton"

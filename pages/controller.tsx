@@ -99,6 +99,15 @@ export default class Controller extends Component<any, any> {
 
 
           <h3>Event Announcements</h3>
+          
+          <div className="buttonContainer">
+            show "next up"
+            <input
+              type="checkbox"
+              defaultChecked
+              onChange={(e) => {this.onSendMessage(MessageTypes.toggleNextUpVisibility, e.target.checked);}}
+            />
+          </div>
 
           <div className="labelContainer" style={{marginTop:0}}>
             <label>Preset<br/>

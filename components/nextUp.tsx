@@ -19,16 +19,14 @@ export default class NextUp extends Component<any, any> {
       <div
         ref={(ref) => {this.containerRef = ref; }}
       >
-        Next Up
+        <img src="./static/coming-up.svg" />
 
         <style jsx>{`
           div {
-            font-size: 20px;
-            text-position: right;
             position: absolute;
             right: 3%;
             top: 3%;
-            width: 10%;
+            width: 4.3%;
           }
 
           img {
