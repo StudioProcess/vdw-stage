@@ -68,7 +68,7 @@ typings/
 
 # production
 /build
-/dist
+#/dist
 /.next
 
 # misc
