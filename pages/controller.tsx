@@ -112,14 +112,14 @@ export default class Controller extends Component<any, any> {
             }}>
               <option value="__">–– Please choose an option ––</option>
               <option value="00">A City Full of Design</option>
-              <option value="01">Gerald Votava (Moderation)</option>
-              <option value="02">Lilli Hollein (VIENNA DESIGN WEEK)</option>
-              <option value="03">Markus Reiter (Bezirksvorsteher 7. Bezirk)</option>
-              <option value="04">Josef Bitzinger (Wirtschaftskammer Wien)</option>
-              <option value="05">Norbert Kettner (WienTourismus)</option>
-              <option value="06">Gerhard Hirczi (Wirtschaftsagentur Wien)</option>
-              <option value="07">Michał Laszczkowski (Adam Mickiewicz Institute)</option>
-              <option value="08">Jolanta Róża Kozłowska (Botschafterin Polen)</option>
+              <option value="01">– Gerald Votava (Moderation)</option>
+              <option value="02">– Lilli Hollein (VIENNA DESIGN WEEK)</option>
+              <option value="03">– Markus Reiter (Bezirksvorsteher 7. Bezirk)</option>
+              <option value="04">– Josef Bitzinger (Wirtschaftskammer Wien)</option>
+              <option value="05">– Norbert Kettner (WienTourismus)</option>
+              <option value="06">– Gerhard Hirczi (Wirtschaftsagentur Wien)</option>
+              <option value="07">– Michał Laszczkowski (Adam Mickiewicz Institute)</option>
+              <option value="08">– Jolanta Róża Kozłowska (Botschafterin Polen)</option>
               <option value="09">FUNDUS SOPHIENSPITAL (Panel)</option>
               <option value="10">STUDIO PROTEST (Eröffnung)</option>
               <option value="11">NEUE VISUELLE INSTRUMENTE (Talk)</option>
@@ -128,10 +128,10 @@ export default class Controller extends Component<any, any> {
               <option value="14">JOINTS AND FITTINGS (Lecture)</option>
               <option value="15">DEPARTURE TALK 1: URBAN FOOD STRATEGIES (Lecture)</option>
               <option value="16">DEPARTURE TALK 1: URBAN FOOD STRATEGIES (Panel)</option>
-              <option value="17">DEPARTURE TALK 2: DESIGNING THE EXPERIENCE (Panel)</option>
               <option value="18">PROPHECY OF THE FALLEN (Talk)</option>
               <option value="19">TEASER: DOING NOTHING WITH AI (Talk)</option>
               <option value="20">ATMOVE: ATMOVE: DESIGN ALS TREIBER... (Talk)</option>
+              <option value="17">DEPARTURE TALK 2: DESIGNING THE EXPERIENCE (Panel)</option>
               <option value="21">PROTESTARCHITEKTUR VON SEMPER BIS OCCUPY (Lecture)</option>
               <option value="22">DESIGNING REALITIES CONFERENCE (Conference)</option>
               <option value="23">– VR &amp; ARCHITECTURE (Panel)</option>
@@ -182,7 +182,7 @@ export default class Controller extends Component<any, any> {
               }
             }}
           >set text</div>
-          
+
           <div className="buttonContainer">
             show "next up"
             <input
