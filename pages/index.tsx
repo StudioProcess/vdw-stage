@@ -47,8 +47,12 @@ export default class Index extends Component<any, any> {
       if (e.key === "h") { // h
         this.openControllerWindow();
       } else if (e.key === "f") { // f
-        this.toggleFullscreen();
+        this.enterFullscreen();
       }
+    });
+    
+    document.addEventListener("dblclick", () => {
+      this.enterFullscreen();
     });
     
     window.addEventListener("resize", () => {
@@ -71,26 +75,23 @@ export default class Index extends Component<any, any> {
       "titlebar=0,close=0,menubar=0,location=0,status=0,width=300,height=825,left=0,top=0,dependent=1,resizable=1,scrollbars=1",
     );
   }
-
-  private toggleFullscreen() {
+  
+  private enterFullscreen() {
     if (document.webkitFullscreenEnabled) { // Chrome, Opera, Safari
       if (!document.webkitFullscreenElement) {
         document.querySelector("body").webkitRequestFullscreen();
-      } else { document.webkitExitFullscreen(); }
+      }
     // @ts-ignore
     } else if (document.mozFullScreenEnabled) { // Firefox
     // @ts-ignore
       if (!document.mozFullScreenElement) {
       // @ts-ignore
         document.querySelector("body").mozRequestFullScreen();
-      } else {
-        // @ts-ignore
-        document.mozCancelFullScreen();
       }
     } else if (document.fullscreenEnabled) { // Standard, Edge
       if (!document.fullscreenElement) {
         document.querySelector("body").requestFullscreen();
-      } else { document.exitFullscreen(); }
+      }
     }
   }
 
@@ -412,7 +413,7 @@ export default class Index extends Component<any, any> {
 
           <div
             className="fullscreenButton"
-            onClick={this.toggleFullscreen}
+            onClick={this.enterFullscreen}
             ref={(ref) => {this.fullscreenButtonRef = ref; }}
           >click to fullscreen</div>
         </div>
