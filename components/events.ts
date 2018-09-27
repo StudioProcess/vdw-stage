@@ -30,9 +30,9 @@ export default {
     size:  180,
   },
   "06": {
-    title: "Gerhard Hirczi\nWirtschafts-\nagentur\nWien",
+    title: "Elisabeth Noever-Ginthör\nWirtschaftsagentur\nWien",
     type:  "",
-    size:  165,
+    size:  100,
   },
   "07": {
     title: "Michał\nLaszczkowski\nADAN MICKIEWICZ\nINSTITUTE",

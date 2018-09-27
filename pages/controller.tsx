@@ -117,7 +117,7 @@ export default class Controller extends Component<any, any> {
               <option value="03">– Markus Reiter (Bezirksvorsteher 7. Bezirk)</option>
               <option value="04">– Josef Bitzinger (Wirtschaftskammer Wien)</option>
               <option value="05">– Norbert Kettner (WienTourismus)</option>
-              <option value="06">– Gerhard Hirczi (Wirtschaftsagentur Wien)</option>
+              <option value="06">– Elisabeth Noever-Ginthör (Wirtschaftsagentur Wien)</option>
               <option value="07">– Michał Laszczkowski (Adam Mickiewicz Institute)</option>
               <option value="08">– Jolanta Róża Kozłowska (Botschafterin Polen)</option>
               <option value="09">FUNDUS SOPHIENSPITAL (Panel)</option>
