@@ -42,7 +42,7 @@ export default {
   "08": {
     title: "Jolanta Róża Kozłowska\nBotschafterin\nRepublik Polen",
     type:  "",
-    size:  120,
+    size:  110,
   },
   "09": {
     title: "Fundus\nSophien-\nspital",
@@ -57,7 +57,7 @@ export default {
   "11": {
     title: "Neue\nVisuelle\nInstrumente",
     type:  "Talk",
-    size:  250,
+    size:  200,
   },
   "12": {
     title: "Polish\nDesign\nand\nEntrepreneurship",
@@ -175,7 +175,7 @@ export default {
     size:  240,
   },
   "35": {
-    title: "Danke!\n \n \n ",
+    title: "Danke!\n<3\n<3\n<3",
     type:  "",
     size:  280,
   },
