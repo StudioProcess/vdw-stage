@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "array-shuffle": "^1.0.1",
-    "gsap": "^2.0.2",
+    "gsap": "^3.6.0",
     "matter-js": "^0.14.2",
     "next": "^5.1.0",
     "opentype.js": "^0.10.0",
