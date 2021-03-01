@@ -21,7 +21,7 @@
     "react-dom": "^16.3.2",
     "seed-random": "^2.2.0",
     "svg-path-bounds": "^1.0.1",
-    "three": "^0.92.0"
+    "three": "^0.125.0"
   },
   "devDependencies": {
     "@types/matter-js": "^0.10.1",
