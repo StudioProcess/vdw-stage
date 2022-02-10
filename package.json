@@ -34,7 +34,7 @@
     "gulp": "^3.9.1",
     "gulp-gzip": "^1.4.2",
     "next-progressbar": "^1.0.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^7.0.0",
     "raw-loader": "^0.5.1",
     "styled-jsx-css-loader": "^0.3.0",
     "styled-jsx-plugin-sass": "^0.2.4",
