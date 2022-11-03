@@ -31,7 +31,7 @@
     "@types/styled-jsx": "^2.2.3",
     "@types/three": "^0.89.12",
     "@zeit/next-typescript": "0.0.10",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-gzip": "^1.4.2",
     "next-progressbar": "^1.0.0",
     "node-sass": "^4.9.0",
