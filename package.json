@@ -13,7 +13,7 @@
     "array-shuffle": "^1.0.1",
     "gsap": "^2.0.2",
     "matter-js": "^0.14.2",
-    "next": "^5.1.0",
+    "next": "^13.1.1",
     "opentype.js": "^0.10.0",
     "pathseg": "^1.2.0",
     "poly-decomp": "^0.3.0",
